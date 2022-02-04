@@ -1,10 +1,8 @@
-import Profile from './components/Profile';
+import Profile from './components/profile/Profile';
 import user from './data/user.json';
 
-import Friends from './components/Frienfs';
+import FriendList from './components/friends/FriendsList';
 import friends from './data/friends.json';
-
-const total = friends[2];
 
 export default function App() {
   return (
@@ -16,11 +14,8 @@ export default function App() {
         avatar={user.avatar}
         stats={user.stats}
       />
-      <Friends
-        name={total.name}
-        avatar={total.avatar}
-        isOnLine={total.isOnline}
-      />
+
+      <FriendList friends={friends} />
     </div>
   );
 }
