@@ -1,82 +1,39 @@
-// import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types';
 
-// const data = {
-//   username: 'Jacques Gluke',
-//   tag: 'jgluke',
-//   location: 'Ocho Rios, Jamaica',
-//   avatar: 'https://cdn-icons-png.flaticon.com/512/2922/2922506.png',
-//   stats: {
-//     followers: 5603,
-//     views: 4827,
-//     likes: 1308,
-//   },
-// };
-
-const Profile = ({
-  username,
-  tag,
-  location,
-  avatar,
-  stats: { followers, views, likes },
-}) => {
+const Profile = ({ username, tag, location, avatar, stats }) => {
   return (
-    <div class="profile">
-      <div class="description">
-        <img src={avatar} alt={username} class="avatar" />
-        <p class="name">{username}</p>
-        <p class="tag">{tag}</p>
-        <p class="location">{location}</p>
+    <div className="profile">
+      <div className="description">
+        <img src={avatar} alt={username} className="avatar" />
+        <p className="name">{username}</p>
+        <p className="tag">{tag}</p>
+        <p className="location">{location}</p>
       </div>
 
-      <ul class="stats">
+      <ul className="stats">
         <li>
-          <span class="label">Followers</span>
-          <span class="quantity">{followers}</span>
+          <span className="label">Followers</span>
+          <span className="quantity">{stats.followers}</span>
         </li>
         <li>
-          <span class="label">Views</span>
-          <span class="quantity">{views}</span>
+          <span className="label">Views</span>
+          <span className="quantity">{stats.views}</span>
         </li>
         <li>
-          <span class="label">Likes</span>
-          <span class="quantity">{likes}</span>
+          <span className="label">Likes</span>
+          <span className="quantity">{stats.likes}</span>
         </li>
       </ul>
     </div>
   );
 };
+
+Profile.propTypes = {
+  username: PropTypes.string.isRequired,
+  tag: PropTypes.string.isRequired,
+  location: PropTypes.string.isRequired,
+  avatar: PropTypes.string.isRequired,
+  stats: PropTypes.objectOf(PropTypes.number).isRequired,
+};
+
 export default Profile;
-// ReactDOM.render(user, document.querySelector('#root'));
-
-// import ReactDOM from 'react-dom';
-// import man from './data/user.json';
-
-// const data = man;
-
-// const user = (
-//   <div class="profile">
-//     <div class="description">
-//       <img src={data.avatar} alt={data.username} class="avatar" width="320" />
-//       <p class="name">{data.username}</p>
-//       <p class="tag">{data.tag}</p>
-//       <p class="location">{data.location}</p>
-//     </div>
-
-//     <ul class="stats">
-//       <li>
-//         <span class="label">Followers</span>
-//         <span class="quantity">{data.stats.followers}</span>
-//       </li>
-//       <li>
-//         <span class="label">Views</span>
-//         <span class="quantity">{data.stats.views}</span>
-//       </li>
-//       <li>
-//         <span class="label">Likes</span>
-//         <span class="quantity">{data.stats.likes}</span>
-//       </li>
-//     </ul>
-//   </div>
-// );
-
-// ReactDOM.render(user, document.querySelector('#root'));

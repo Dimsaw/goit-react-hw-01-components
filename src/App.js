@@ -15,7 +15,9 @@ export default function App() {
         stats={user.stats}
       />
 
-      <FriendList friends={friends} />
+      <div>
+        <FriendList friends={friends} />
+      </div>
     </div>
   );
 }
