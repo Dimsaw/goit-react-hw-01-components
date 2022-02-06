@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import s from './Statistics.module.css';
-import RandomColor from '../randomColor/RandomColor';
+import RandomColor from '../../randomColor/RandomColor';
 
 const Statistics = ({ title = '', stats }) => {
   return (
@@ -24,7 +24,7 @@ const Statistics = ({ title = '', stats }) => {
 };
 
 Statistics.propType = {
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   stats: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
